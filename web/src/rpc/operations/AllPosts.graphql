@@ -1,0 +1,19 @@
+query AllPosts($cursor: String = null, $limit: Int = 10) {
+  listPosts(cursor: $cursor, limit: $limit) {
+    edges {
+      cursor
+      node {
+        id
+        title
+        body
+        created_at
+      }
+    }
+    pageInfo {
+      endCursor
+      startCursor
+      hasPreviousPage
+      hasNextPage
+    }
+  }
+}

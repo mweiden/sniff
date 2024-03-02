@@ -1,0 +1,5 @@
+{
+  	"scripts": {
+		"web-start": "yarn --cwd $PWD/web start"
+	}
+}

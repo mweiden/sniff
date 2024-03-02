@@ -1,0 +1,61 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Post {
+    id: ID!
+    title: String!
+    body: String!
+    created_at: String!
+}
+
+type PostResult {
+    success: Boolean!
+    errors: [String!]
+    post: Post!
+}
+
+type Query {
+    listPosts(cursor: String, limit: Int!): PostConnection!
+    getPost(id: ID!): PostResult!
+}
+
+"""
+This wrapper type contains the list of "edges" and
+pagination metadata.
+"""
+type PostConnection {
+    edges: [PostEdge!]!
+    pageInfo: PageInfo!
+}
+
+"""
+The "edge" wrapper contains metadata about the item in the
+list. By default it's just a cursor indicating the position
+of the item in the list, but additional metadata is allowed.
+"""
+type PostEdge {
+    """
+    The "node" is the actual item in the list.
+    """
+    node: Post!
+    cursor: String!
+}
+
+"""
+The specification includes the pagination metadata
+in a common type.
+"""
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Mutation {
+    createPost(title: String!, body: String!): PostResult!
+    updatePost(id: ID!, title: String, body: String): PostResult!
+    deletePost(id: ID!): PostResult!
+}
