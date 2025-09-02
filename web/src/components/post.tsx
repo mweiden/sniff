@@ -15,6 +15,7 @@ const PostDateTime = styled.span`
 `;
 
 type PostProps = {
+    id: string;
     title: string;
     body: string;
     created_at: string;

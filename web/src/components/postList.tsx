@@ -13,8 +13,8 @@ function PostList({ posts, loading }: PostListParams) {
     { loading || posts === undefined ?
       <em>Loading...</em> :
       <ol>
-        {posts.map((post, index) => 
-          <li key={`post_${index}`}>
+        {posts.map((post) =>
+          <li key={post.id}>
             <Post {...post}/>
           </li>
         )}
