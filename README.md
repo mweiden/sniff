@@ -1,6 +1,6 @@
 # Sniff: web application scaffold
 
-This is a web application demonstration repo. It's a barebones newsfeed-style app used to scaffold the folliwing tech stack:
+This is a web application demonstration repo. It's a barebones newsfeed-style app used to scaffold the following tech stack:
 
 *Frontend stack:*
 * React SPA
